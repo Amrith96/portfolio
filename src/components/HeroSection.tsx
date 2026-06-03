@@ -1,0 +1,167 @@
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
+
+const NAV_LINKS = [
+  { label: 'About',      id: 'about' },
+  { label: 'Projects',   id: 'projects' },
+  { label: 'Experience', id: 'experience' },
+  { label: 'Skills',     id: 'skills' },
+  { label: 'Contact',    id: 'contact' },
+]
+
+const META = [
+  { label: 'Role',     value: 'AI Automation Engineer' },
+  { label: 'Based in', value: 'Kochi, Kerala' },
+  { label: 'Stack',    value: 'Claude · Next.js · Supabase · React Native' },
+]
+
+export default function HeroSection() {
+  return (
+    <section className="h-screen relative">
+
+      {/* Navbar — floating pill */}
+      <div className="absolute top-0 left-0 right-0 z-20 flex justify-center pt-5">
+        <div
+          style={{
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            background: 'rgba(0,0,0,0.45)',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: 9999,
+            padding: '10px 10px 10px 28px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: 0,
+            boxShadow: '0 4px 32px rgba(0,0,0,0.3), inset 0 1px 0 rgba(255,255,255,0.08)',
+          }}
+        >
+          {NAV_LINKS.map(({ label, id }) => (
+            <button
+              key={id}
+              onClick={() => {
+                const el = document.getElementById(id)
+                if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+              }}
+              style={{ color: 'rgba(222,219,200,0.65)', fontSize: 13, fontWeight: 500, background: 'none', border: 'none', cursor: 'pointer', transition: 'color 0.2s', padding: '0 16px', whiteSpace: 'nowrap' }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#DEDBC8')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(222,219,200,0.65)')}
+            >
+              {label}
+            </button>
+          ))}
+
+          {/* Hire Me CTA */}
+          <a
+            href="mailto:amrithnambiar901@gmail.com?subject=Hiring Inquiry — Amrith Raj&body=Hi Amrith,%0D%0A%0D%0AI came across your portfolio and I'm interested in discussing a potential opportunity.%0D%0A%0D%0ACompany:%0D%0ARole:%0D%0ADetails:%0D%0A%0D%0ALooking forward to hearing from you."
+            style={{ background: '#DEDBC8', borderRadius: 9999, paddingLeft: 20, paddingRight: 6, paddingTop: 6, paddingBottom: 6, display: 'flex', alignItems: 'center', gap: 10, marginLeft: 16, textDecoration: 'none', cursor: 'pointer', transition: 'background 0.2s' }}
+            onMouseEnter={(e) => (e.currentTarget.style.background = '#ccc9b5')}
+            onMouseLeave={(e) => (e.currentTarget.style.background = '#DEDBC8')}
+          >
+            <span style={{ color: '#000', fontWeight: 600, fontSize: 13, whiteSpace: 'nowrap' }}>Hire Me</span>
+            <span style={{ background: '#000', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', transition: 'transform 0.2s', flexShrink: 0 }}>
+              <ArrowRight size={13} color="#DEDBC8" />
+            </span>
+          </a>
+        </div>
+      </div>
+
+      {/* AREA 1 — Top left: pill + name + bio + CTA */}
+      <div
+        className="absolute top-0 left-0 z-20 p-6 sm:p-10 md:p-14 flex flex-col items-start justify-start"
+        style={{ paddingTop: 80 }}
+      >
+        {/* Availability pill */}
+        <motion.div
+          initial={{ y: 12, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.2, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'rgba(222,219,200,0.08)', border: '1px solid rgba(222,219,200,0.15)', borderRadius: 9999, padding: '6px 16px' }}
+        >
+          <span style={{ width: 7, height: 7, borderRadius: '50%', background: '#4ade80', flexShrink: 0, animation: 'pulse-slow 2s ease-in-out infinite' }} />
+          <span style={{ color: 'rgba(222,219,200,0.8)', fontSize: 12, letterSpacing: '0.04em' }}>
+            Open to AI Engineering &amp; Full-Stack roles
+          </span>
+        </motion.div>
+
+        {/* Name */}
+        <motion.div
+          initial={{ y: 30, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            fontFamily: "'Playfair Display', serif",
+            fontSize: 'clamp(6.3rem, 19.6vw, 21rem)',
+            fontWeight: 500,
+            lineHeight: 0.88,
+            letterSpacing: '-0.04em',
+            color: '#E1E0CC',
+            maxWidth: '55vw',
+            marginTop: 16,
+          }}
+        >
+          Amrith
+        </motion.div>
+
+        {/* Bio */}
+        <motion.p
+          style={{ color: 'rgba(222,219,200,0.6)', fontSize: 14, lineHeight: 1.5, maxWidth: 320, marginTop: 16 }}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        >
+          Building WhatsApp AI and full-stack platforms for Indian businesses.
+        </motion.p>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.7, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginTop: 20 }}
+        >
+          <a
+            href="mailto:amrithnambiar901@gmail.com"
+            className="group flex items-center gap-2 hover:gap-3 transition-all duration-300 w-fit"
+          >
+            <div style={{ background: '#DEDBC8', borderRadius: 9999, padding: '8px 8px 8px 20px', display: 'flex', alignItems: 'center', gap: 10 }}>
+              <span style={{ color: '#000', fontWeight: 600, fontSize: 13, letterSpacing: '0.01em' }}>
+                Get in touch
+              </span>
+              <div
+                style={{ background: '#000', borderRadius: 9999, width: 34, height: 34, display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                className="group-hover:scale-110 transition-transform"
+              >
+                <ArrowRight size={15} color="#DEDBC8" />
+              </div>
+            </div>
+          </a>
+        </motion.div>
+      </div>
+
+      {/* AREA 2 — Bottom bar: metadata only */}
+      <motion.div
+        className="absolute bottom-0 left-0 right-0 z-20 px-6 sm:px-10 md:px-14 pb-5 flex items-center gap-6 flex-wrap"
+        initial={{ y: 16, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+      >
+        {META.map(({ label, value }, i) => (
+          <div key={label} className="flex items-center gap-6">
+            {i > 0 && (
+              <div style={{ width: 1, height: 14, background: 'rgba(225,224,204,0.15)', flexShrink: 0 }} />
+            )}
+            <div className="flex items-center">
+              <span style={{ color: 'rgba(225,224,204,0.4)', fontSize: 10, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+                {label}
+              </span>
+              <span style={{ color: 'rgba(225,224,204,0.75)', fontSize: 12, marginLeft: 8 }}>
+                {value}
+              </span>
+            </div>
+          </div>
+        ))}
+      </motion.div>
+
+    </section>
+  )
+}
