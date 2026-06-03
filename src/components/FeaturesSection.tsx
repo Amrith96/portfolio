@@ -138,9 +138,10 @@ function Card({ project, index, onOpen }: { project: Project; index: number; onO
 
 export default function FeaturesSection() {
   const [selected, setSelected] = useState<Project | null>(null)
+  const isMobileSheet = typeof window !== 'undefined' && window.innerWidth < 768
 
   return (
-    <section id="projects" className="min-h-screen bg-transparent relative py-16 sm:py-20 md:py-28 px-4">
+    <section id="projects" className="min-h-screen bg-transparent relative py-16 sm:py-20 md:py-28 px-4 sm:px-6">
 
       {/* Noise */}
       <div className="absolute inset-0 bg-noise opacity-[0.15] pointer-events-none" />
@@ -157,7 +158,7 @@ export default function FeaturesSection() {
       </div>
 
       {/* Cards */}
-      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:h-[520px]">
+      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:h-[520px]">
         {projects.map((project, i) => (
           <Card
             key={project.id}
@@ -181,10 +182,10 @@ export default function FeaturesSection() {
             />
 
             <motion.div
-              className="fixed inset-y-0 right-0 z-50 w-full max-w-xl bg-[#0c0c0c] border-l border-white/10 overflow-y-auto"
-              initial={{ x: '100%' }}
-              animate={{ x: 0 }}
-              exit={{ x: '100%' }}
+              className="fixed z-50 bg-[#0c0c0c] overflow-y-auto md:inset-y-0 md:right-0 md:max-w-xl w-full bottom-0 left-0 right-0 h-[90vh] md:h-auto rounded-t-2xl md:rounded-none md:border-l md:border-white/10"
+              initial={isMobileSheet ? { y: '100%' } : { x: '100%' }}
+              animate={isMobileSheet ? { y: 0 } : { x: 0 }}
+              exit={isMobileSheet ? { y: '100%' } : { x: '100%' }}
               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             >
               <div className="flex items-start justify-between p-8 border-b border-white/10">

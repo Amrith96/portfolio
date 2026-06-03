@@ -7,42 +7,42 @@ const GROUPS = [
     number: '01',
     featured: true,
     skills: ['Claude API', 'Prompt Engineering', 'Whisper Fine-tuning', 'NLP', 'TensorFlow'],
-    colSpan: 'col-span-12 md:col-span-7',
+    colSpan: 'col-span-12 sm:col-span-6 md:col-span-7',
   },
   {
     label: 'Frontend',
     number: '02',
     featured: false,
     skills: ['Next.js 16', 'React', 'React Native', 'Expo SDK 54', 'Tailwind CSS', 'TypeScript'],
-    colSpan: 'col-span-12 md:col-span-5',
+    colSpan: 'col-span-12 sm:col-span-6 md:col-span-5',
   },
   {
     label: 'Backend & DB',
     number: '03',
     featured: false,
     skills: ['Node.js', 'Supabase', 'PostgreSQL', 'Redis', 'Railway', 'Vercel'],
-    colSpan: 'col-span-12 md:col-span-5',
+    colSpan: 'col-span-12 sm:col-span-6 md:col-span-5',
   },
   {
     label: 'Data & Analytics',
     number: '04',
     featured: true,
     skills: ['Python', 'Pandas', 'Power BI', 'SQL', 'EDA', 'MIS Reporting'],
-    colSpan: 'col-span-12 md:col-span-7',
+    colSpan: 'col-span-12 sm:col-span-6 md:col-span-7',
   },
   {
     label: 'Integrations',
     number: '05',
     featured: false,
     skills: ['WATI', 'Twilio', 'Razorpay', 'PostHog', 'Sentry', 'Meta Ads'],
-    colSpan: 'col-span-12 md:col-span-6',
+    colSpan: 'col-span-12 sm:col-span-6 md:col-span-6',
   },
   {
     label: 'Tools',
     number: '06',
     featured: false,
     skills: ['Claude Code', 'GitHub', 'VS Code', 'EAS Build', 'Sharp', 'Figma'],
-    colSpan: 'col-span-12 md:col-span-6',
+    colSpan: 'col-span-12 sm:col-span-6 md:col-span-6',
   },
 ]
 
@@ -114,7 +114,7 @@ function GroupCard({ group, index }: { group: typeof GROUPS[number]; index: numb
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="bg-transparent py-16 sm:py-20 md:py-28 px-4">
+    <section id="skills" className="bg-transparent py-16 sm:py-20 md:py-28 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto">
 
         <p className="text-primary/50 text-xs uppercase tracking-widest text-center mb-8">

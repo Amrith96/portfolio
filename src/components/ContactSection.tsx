@@ -44,7 +44,7 @@ function RowContent({ label, value }: { label: string; value: string }) {
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="bg-transparent border-t border-white/5 py-16 sm:py-20 px-4">
+    <section id="contact" className="bg-transparent border-t border-white/5 py-16 sm:py-20 px-4 sm:px-6">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
         {/* Left */}
@@ -81,7 +81,7 @@ export default function ContactSection() {
                 className="group block hover:border-white/[0.13] transition-colors"
                 style={bezOuter}
               >
-                <div style={{ ...bezInner, transition: 'background 0.2s' }} className="px-6 py-4 flex items-center justify-between group-hover:bg-[#151515]">
+                <div style={{ ...bezInner, transition: 'background 0.2s' }} className="px-6 py-5 flex items-center justify-between group-hover:bg-[#151515]">
                   <RowContent label={label} value={value} />
                 </div>
               </a>
@@ -91,7 +91,7 @@ export default function ContactSection() {
                 className="cursor-default hover:border-white/[0.13] transition-colors"
                 style={bezOuter}
               >
-                <div style={bezInner} className="px-6 py-4 flex items-center justify-between group">
+                <div style={bezInner} className="px-6 py-5 flex items-center justify-between group">
                   <RowContent label={label} value={value} />
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function ContactSection() {
       <div className="max-w-6xl mx-auto mt-16">
         <a
           href="mailto:amrithnambiar901@gmail.com"
-          className="w-full bg-[#DEDBC8] rounded-2xl p-8 sm:p-10 flex items-center justify-between group hover:bg-[#ccc9b5] transition-colors duration-300 cursor-pointer"
+          className="w-full bg-[#DEDBC8] rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-0 group hover:bg-[#ccc9b5] transition-colors duration-300 cursor-pointer"
         >
           <div>
             <p style={{ fontFamily: "'Playfair Display', serif", fontSize: 'clamp(1.4rem, 3vw, 2.2rem)', color: '#000', fontWeight: 500, lineHeight: 1.1 }}>

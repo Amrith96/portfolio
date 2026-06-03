@@ -33,12 +33,12 @@ export default function AboutSection() {
   const chars = BIO.split('')
 
   return (
-    <section id="about" className="bg-transparent py-16 sm:py-20 md:py-28 px-4">
+    <section id="about" className="bg-transparent py-16 sm:py-20 md:py-28 px-4 sm:px-6">
       <div
         className="max-w-6xl mx-auto hover:border-white/[0.13] transition-colors"
         style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', padding: 3, borderRadius: 24 }}
       >
-      <div style={{ background: '#0c0c0c', borderRadius: 21, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06)' }} className="p-8 sm:p-12 md:p-16 lg:p-20 text-center">
+      <div style={{ background: '#0c0c0c', borderRadius: 21, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06)' }} className="p-6 sm:p-10 md:p-16 lg:p-20 text-center">
 
         <p className="text-primary text-[10px] sm:text-xs uppercase tracking-widest mb-6 sm:mb-8">
           AI Automation Engineer
@@ -53,7 +53,7 @@ export default function AboutSection() {
               className: 'font-normal text-primary',
             },
           ]}
-          containerClassName="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl max-w-3xl mx-auto leading-[0.95] sm:leading-[0.9]"
+          containerClassName="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl max-w-3xl mx-auto leading-[0.95] sm:leading-[0.9]"
         />
 
         <div ref={scrollRef} className="mt-8 sm:mt-12">

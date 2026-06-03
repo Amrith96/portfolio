@@ -65,18 +65,18 @@ function TimelineItem({ item, index }: { item: typeof ITEMS[number]; index: numb
       </div>
 
       {/* Right: content */}
-      <div style={{ borderLeft: '1px solid rgba(222,219,200,0.07)', paddingLeft: 32, transition: 'border-color 0.3s' }} className="group-hover:[border-left-color:rgba(222,219,200,0.2)]">
+      <div className="lg:border-l lg:pl-8 group-hover:[border-left-color:rgba(222,219,200,0.2)]" style={{ borderLeftColor: 'rgba(222,219,200,0.07)', transition: 'border-color 0.3s' }}>
         <div className="flex items-start justify-between gap-4">
           <div>
+            {/* Date: mobile only — above role */}
+            <p className="block lg:hidden text-primary/35 text-xs font-mono mb-1" style={{ letterSpacing: '0.06em' }}>
+              {item.date}
+            </p>
             <p style={{ color: '#E1E0CC', fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 500, marginBottom: 6 }}>
               {item.role}
             </p>
             <p style={{ color: 'rgba(222,219,200,0.4)', fontSize: 14, marginBottom: 14 }}>
               {item.company}
-            </p>
-            {/* Date: mobile only */}
-            <p className="lg:hidden" style={{ color: 'rgba(222,219,200,0.35)', fontSize: 13, fontFamily: 'monospace', letterSpacing: '0.06em', marginBottom: 12 }}>
-              {item.date}
             </p>
           </div>
           {item.current && (
