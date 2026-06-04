@@ -27,22 +27,30 @@ const projects = [
     id: 'aria',
     number: '02',
     icon: 'A',
-    title: 'Aria — WhatsApp AI.',
-    tagline: 'Bilingual AI sales concierge for WhatsApp-first Indian businesses.',
+    title: 'Aria — WhatsApp AI CRM.',
+    tagline: 'WhatsApp-first AI sales assistant and CRM built for Indian SMBs.',
     description:
-      'Aria is a bilingual AI concierge that qualifies leads in real time over WhatsApp and voice. It talks naturally in English or Malayalam based on what the customer types, scores every lead 0–100, and books demo slots autonomously using atomic Supabase locking.',
+      'Aria combines an autonomous AI agent that handles inbound WhatsApp conversations with a full sales CRM — web and Android. It qualifies leads, scores them 0–100, books demo slots autonomously, sends follow-ups, and escalates hot leads — all without human intervention. Built for Kerala SMBs where sales happen on WhatsApp.',
     bullets: [
-      'Bilingual: English + Malayalam (Manglish)',
-      'Real-time 0–100 lead scoring',
-      'WATI + Twilio + Supabase stack',
-      '11-stage autonomous sales pipeline',
-      'Demo booking with conflict-free slot locking',
-      'Android CRM app (React Native / Expo SDK 54)',
+      '24/7 AI agent — responds in under 5 seconds',
+      '0–100 lead scoring + Hot/Warm/Cold classification',
+      'Android CRM with real-time sync',
     ],
-    stack: ['Claude AI', 'Node.js', 'Railway', 'WATI', 'Twilio', 'Supabase', 'React Native', 'Expo'],
-    status: 'Live',
+    modalBullets: [
+      'AI agent handles inbound WhatsApp 24/7 — responds in <5 seconds',
+      'Proprietary lead scoring algorithm (scoreLeadV3) — Hot / Warm / Cold classification',
+      '12-stage autonomous sales pipeline with full audit trail',
+      'Demo slot booking with atomic conflict prevention',
+      'Bilingual: English + Malayalam (Manglish) natively',
+      'Android CRM (React Native / Expo) with real-time Supabase sync',
+      'Call recording + Malayalam Whisper STT fine-tuning (HuggingFace)',
+      '3 automated cron jobs — demo, follow-up, and post-demo reminders',
+      'Multi-tenant white-label architecture — workspace_id isolation on all tables',
+    ],
+    stack: ['Claude AI', 'Node.js', 'Railway', 'Supabase', 'WATI', 'Twilio', 'React Native', 'Expo SDK 54', 'Next.js', 'Vercel', 'Whisper STT'],
+    status: 'Live in Production',
     year: '2026',
-    role: 'Solo Builder — AI Engineering + Mobile Dev',
+    role: 'Solo Developer & Product Architect',
   },
   {
     id: 'ops',
@@ -67,7 +75,7 @@ const projects = [
   },
 ]
 
-type Project = typeof projects[0]
+type Project = typeof projects[0] & { modalBullets?: string[] }
 
 function Card({ project, index, onOpen }: { project: Project; index: number; onOpen: () => void }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -234,7 +242,7 @@ export default function FeaturesSection() {
                 <div>
                   <p className="text-white/30 text-[10px] uppercase tracking-wider mb-3">Features</p>
                   <ul className="space-y-3">
-                    {selected.bullets.map((b, i) => (
+                    {(selected.modalBullets ?? selected.bullets).map((b, i) => (
                       <li key={i} className="flex items-start gap-3">
                         <Check size={14} className="text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-gray-300 text-sm">{b}</span>
@@ -242,6 +250,25 @@ export default function FeaturesSection() {
                     ))}
                   </ul>
                 </div>
+
+                {selected.id === 'aria' && (
+                  <div>
+                    <p className="text-white/30 text-[10px] uppercase tracking-wider mb-3">Results (First 3 Months)</p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {[
+                        { value: '261',   label: 'Leads captured automatically' },
+                        { value: '<5s',   label: 'Average response time' },
+                        { value: '90+',   label: 'Hours saved per month' },
+                        { value: '100%',  label: 'Follow-up coverage' },
+                      ].map(m => (
+                        <div key={m.value + m.label} className="bg-[#151515] border border-white/5 rounded-xl p-4">
+                          <p className="text-primary text-2xl font-medium" style={{ fontFamily: "'Playfair Display', serif" }}>{m.value}</p>
+                          <p className="text-gray-500 text-xs mt-1">{m.label}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
 
                 <div>
                   <p className="text-white/30 text-[10px] uppercase tracking-wider mb-3">Tech Stack</p>
