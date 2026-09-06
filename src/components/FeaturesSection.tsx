@@ -73,6 +73,101 @@ const projects = [
     year: '2026',
     role: 'Solo Builder — Full Stack Engineering',
   },
+  {
+    id: 'teena',
+    number: '04',
+    icon: 'T',
+    title: 'Teena — ROKN WhatsApp Bot.',
+    tagline: 'Multi-branch WhatsApp AI for a pre-owned IT retailer.',
+    description: 'Teena is a WhatsApp AI bot built for ROKN, a multi-branch pre-owned IT retailer. Features multi-branch geo-assignment using Haversine distance and Nominatim, round-robin staff assignment, and a full voice pipeline using Sarvam STT/TTS. Includes prompt caching, a CRM with pagination, and Supabase egress optimization.',
+    bullets: [
+      'Multi-branch geo-assignment with Haversine + Nominatim',
+      'Round-robin staff assignment per branch',
+      'Voice pipeline — Sarvam STT/TTS',
+      'Prompt caching for cost efficiency',
+      'CRM with real-time Supabase sync',
+    ],
+    stack: ['Claude AI', 'Node.js', 'Railway', 'Supabase', 'WATI', 'Sarvam STT/TTS'],
+    status: 'Live',
+    year: '2026',
+    role: 'Solo Builder — AI Engineering',
+  },
+  {
+    id: 'vani',
+    number: '05',
+    icon: 'V',
+    title: 'Vani — Aviation AI Concierge.',
+    tagline: 'Aria deployed for AVENIR Institute of Aviation as "Vani".',
+    description: 'Vani is a white-label deployment of Aria for AVENIR Institute of Aviation. Custom persona for aviation admissions, covering three diploma courses with full pricing. Lead scoring rewritten for aviation keywords. CRM rebranded for the client. Runs on the same Aria backend architecture with client-specific configuration.',
+    bullets: [
+      'Custom aviation admissions persona',
+      'Three diploma courses with pricing knowledge',
+      'Lead scoring tuned for aviation keywords',
+      'White-label CRM with AVENIR branding',
+      'Supabase Micro tier optimized for client budget',
+    ],
+    stack: ['Claude AI', 'Node.js', 'Railway', 'Supabase', 'WATI', 'Aria Platform'],
+    status: 'Live',
+    year: '2026',
+    role: 'Solo Builder — AI Engineering',
+  },
+  {
+    id: 'aureate',
+    number: '06',
+    icon: 'A',
+    title: 'Aureate Way — Institute Website.',
+    tagline: 'Website for a practical English communication institute in Kozhikode.',
+    description: 'Freelance website build for Aureate Way, a practical English language and communication institute in Kozhikode, Kerala. Full build including content integration from client brochure, deployment, hosting, and basic SEO. Covers 7 courses: English for Toddlers, Students, Teachers, Spoken English, Pronunciation, IELTS, and OET.',
+    bullets: [
+      '7 course pages with full content integration',
+      'SEO-optimized static site',
+      'Deployed on custom domain aureateway.com',
+      '1-year AMC included',
+      'Built from client brochure PDF reference',
+    ],
+    stack: ['React', 'Vite', 'Vercel', 'GoDaddy DNS'],
+    status: 'Live',
+    year: '2026',
+    role: 'Freelance Developer',
+  },
+  {
+    id: 'formix',
+    number: '07',
+    icon: 'F',
+    title: 'ForMix Design — Website & CRM.',
+    tagline: 'Marketing website and internal CRM for an engineering design firm.',
+    description: 'Two-part build for ForMix Design: a cinematic marketing website with anime.js v4 animations, Clash Display and Instrument Serif typography, and a dark industrial aesthetic — plus a full internal CRM (BMS fork) with 5-role model, lead pipeline, booking, expenses, invoicing, and staff invite flow with forced password change.',
+    bullets: [
+      'Anime.js v4 scroll animations throughout',
+      'Custom typography: Clash Display + Switzer + Instrument Serif',
+      'Contact form feeds directly into internal CRM',
+      'CRM: Leads, Booking Pipeline, Staff, Expenses, Invoicing',
+      'RLS-secured with staff invite flow',
+    ],
+    stack: ['React', 'Vite', 'anime.js', 'Supabase', 'Next.js', 'Vercel'],
+    status: 'Live',
+    year: '2026',
+    role: 'Solo Builder — Full Stack',
+  },
+  {
+    id: 'craftline',
+    number: '08',
+    icon: 'C',
+    title: 'Craftline Institute — Brand & Website.',
+    tagline: 'Multi-vertical training institute brand and website in Kochi.',
+    description: 'Full brand naming and website build for Craftline Institute, a multi-vertical training institute in Kakkanad, Kochi. Phase 1 covers logistics, hospital administration, and hospitality management. Phase 2 adds aviation and practical accounting. Deployed at craftlineinstitute.in with custom GoDaddy DNS.',
+    bullets: [
+      'Brand naming from scratch — Craftline Institute',
+      '5 verticals: Aviation, Logistics, Hospital Admin, Hospitality, Accounting',
+      'Custom color system: Navy #19057a + Red #ff0000',
+      'Deployed at craftlineinstitute.in',
+      'Phase 2 expansion planned',
+    ],
+    stack: ['React', 'Vite', 'Vercel', 'GoDaddy DNS'],
+    status: 'Live',
+    year: '2026',
+    role: 'Solo Builder — Brand + Full Stack',
+  },
 ]
 
 type Project = typeof projects[0] & { modalBullets?: string[] }
@@ -158,15 +253,15 @@ export default function FeaturesSection() {
       <div className="relative z-10 text-center mb-12 sm:mb-16">
         <WordsPullUpMultiStyle
           segments={[
-            { text: "Products I've shipped at Bluetik.", className: 'text-primary font-normal' },
-            { text: 'Real systems. Real users. Real impact.', className: 'text-gray-500 font-normal' },
+            { text: 'Products & Client Work.', className: 'text-primary font-normal' },
+            { text: '8 systems. Real users. Real impact.', className: 'text-gray-500 font-normal' },
           ]}
           containerClassName="text-xl sm:text-2xl md:text-3xl lg:text-4xl"
         />
       </div>
 
       {/* Cards */}
-      <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 lg:h-[520px]">
+      <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
         {projects.map((project, i) => (
           <Card
             key={project.id}

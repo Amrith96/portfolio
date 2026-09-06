@@ -4,7 +4,7 @@ import WordsPullUpMultiStyle from './WordsPullUpMultiStyle'
 import AnimatedLetter from './AnimatedLetter'
 
 const BIO =
-  'Since February 2026 at Bluetik Marketing Agency in Kochi, I have built BluAI — an AI-powered marketing content platform, Aria — a bilingual WhatsApp AI concierge, an internal ops platform with 11 role dashboards, and an Android CRM app. My stack spans Claude AI, Next.js, Supabase, React Native, and Railway.'
+  'Since February 2026 at Bluetik Marketing Agency in Kochi, I have built and deployed 8 production systems — BluAI (AI content platform), Aria (WhatsApp AI concierge), an internal ops platform with 11 role dashboards, an Android CRM, Teena (multi-branch retail bot), Vani (aviation admissions AI), and websites for Aureate Way, ForMix, and Craftline Institute. My stack spans Claude AI, Next.js, Supabase, React Native, Railway, and Vercel.'
 
 interface LetterProps {
   char: string
@@ -39,6 +39,26 @@ export default function AboutSection() {
         style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', padding: 3, borderRadius: 24 }}
       >
       <div style={{ background: '#0c0c0c', borderRadius: 21, boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.06)' }} className="p-6 sm:p-10 md:p-16 lg:p-20 text-center">
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
+          <div style={{
+            width: 72, height: 72,
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: '1.5px solid rgba(222,219,200,0.2)',
+            flexShrink: 0,
+          }}>
+            <img
+              src="/images/WhatsApp Image 2026-09-06 at 8.54.58 PM.jpeg"
+              alt="Amrith Raj"
+              style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+            />
+          </div>
+          <div style={{ textAlign: 'left' }}>
+            <p style={{ color: '#DEDBC8', fontSize: 16, fontWeight: 500, fontFamily: "'Almarai', sans-serif" }}>Amrith Raj M V</p>
+            <p style={{ color: 'rgba(222,219,200,0.4)', fontSize: 13, marginTop: 2 }}>AI Automation Engineer · Bluetik, Kochi</p>
+          </div>
+        </div>
 
         <p className="text-primary text-[10px] sm:text-xs uppercase tracking-widest mb-6 sm:mb-8">
           AI Automation Engineer

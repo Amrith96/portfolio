@@ -209,13 +209,33 @@ export default function HeroSection() {
         </motion.div>
       </div>
 
-      {/* AREA 2 — Bottom bar: metadata only */}
+      {/* AREA 2 — Bottom bar: photo + metadata */}
       <motion.div
-        className="absolute bottom-0 left-0 right-0 z-20 px-6 sm:px-10 md:px-14 pb-5 flex items-center gap-3 sm:gap-6 flex-wrap"
+        className="absolute bottom-0 left-0 right-0 z-20 px-6 sm:px-10 md:px-14 pb-5 flex flex-col items-start"
         initial={{ y: 16, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.35, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
       >
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            width: 64, height: 64,
+            borderRadius: '50%',
+            overflow: 'hidden',
+            border: '1.5px solid rgba(222,219,200,0.25)',
+            marginBottom: 16,
+            flexShrink: 0,
+          }}
+        >
+          <img
+            src="/images/WhatsApp Image 2026-09-06 at 8.50.58 PM.jpeg"
+            alt="Amrith Raj"
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
+          />
+        </motion.div>
+        <div className="flex items-center gap-3 sm:gap-6 flex-wrap">
         {META.map(({ label, value }, i) => (
           <div key={label} className="flex items-center gap-3 sm:gap-6">
             {i > 0 && (
@@ -231,6 +251,7 @@ export default function HeroSection() {
             </div>
           </div>
         ))}
+        </div>
       </motion.div>
 
     </section>
