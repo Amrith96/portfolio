@@ -1,140 +1,127 @@
-import { useRef } from 'react'
-import { motion, useInView } from 'framer-motion'
-import WordsPullUpMultiStyle from './WordsPullUpMultiStyle'
-
-const ITEMS = [
+const TIMELINE = [
   {
-    date: 'Feb 2026 — Present',
-    role: 'AI Automation Engineer',
+    number: '01',
+    role: 'AI AUTOMATION ENGINEER',
     company: 'Bluetik Marketing Agency, Kochi',
-    current: true,
+    date: 'Feb 2026 — Present',
     bullets: [
-      'Built BluAI, Aria, Internal Ops Platform and Android CRM from scratch',
-      'Claude AI · Next.js · Supabase · React Native · Railway · Vercel',
+      'Built 8 production systems including BluAI, Aria, Teena, Vani',
+      'Deployed full-stack SaaS, WhatsApp AI bots, and internal ops platforms',
+      'Stack: Claude AI, Next.js, Supabase, React Native, Railway',
     ],
   },
   {
-    date: 'Oct 2024 — Dec 2025',
-    role: 'Data & MIS Analyst — Production & Marketing',
-    company: 'SRA Foods, Kannur',
-    current: false,
+    number: '02',
+    role: 'AI ENGINEER TRAINEE',
+    company: 'DataMites, Bangalore',
+    date: '2024',
     bullets: [
-      'Analysed production, sales, and operational data to identify process gaps',
-      'Developed and tracked KPIs using Excel and Power BI across production, quality, and sales',
+      'Completed intensive AI Engineer program',
+      'Practical ML, Python, and data science pipeline training',
+      'Earned NASSCOM Gold AIE and IABAC certifications',
     ],
   },
   {
-    date: 'Oct 2024 — Jun 2025',
-    role: 'Data Analyst Intern',
-    company: 'Rubixie AI, Bangalore',
-    current: false,
+    number: '03',
+    role: 'FREELANCE DEVELOPER',
+    company: 'Independent',
+    date: '2024 — 2026',
     bullets: [
-      'Cleaned and validated large datasets using Python (Pandas, NumPy) — reduced inconsistencies by 30%',
-      'Designed interactive Power BI dashboards to visualise KPIs for stakeholders',
+      'Built websites and CRMs for Aureate Way, ForMix, Craftline Institute',
+      'Full-stack builds from design to deployment',
+      'Supabase, React, Vite, Vercel, GoDaddy DNS',
     ],
   },
   {
-    date: 'Jun 2021 — Aug 2021',
-    role: 'Student Partner',
-    company: 'Inventrom Private Ltd (Bolt IoT), Bangalore',
-    current: false,
+    number: '04',
+    role: 'B.TECH — ELECTRICAL ENGINEERING',
+    company: 'Vimal Jyothi Engineering College, Kerala',
+    date: '2020 — 2024',
     bullets: [
-      'IoT and ML community outreach and brand awareness',
-      'Business development and student partnership program',
+      'Bachelor of Technology — Electrical & Electronics Engineering',
+      'Built foundation in systems thinking and problem solving',
     ],
   },
 ]
 
-function TimelineItem({ item, index }: { item: typeof ITEMS[number]; index: number }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const inView = useInView(ref, { once: true, margin: '-80px' })
-
-  return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 24 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 24 }}
-      transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: index * 0.1 }}
-      className="group relative grid grid-cols-1 lg:grid-cols-[200px_1fr] gap-0 py-8 border-b border-white/[0.07] last:border-0 hover:bg-white/[0.015] transition-colors rounded-lg px-4 lg:px-6 cursor-default"
-    >
-      {/* Left: date (desktop only) */}
-      <div className="hidden lg:block">
-        <span style={{ color: 'rgba(222,219,200,0.35)', fontSize: 13, fontFamily: 'monospace', letterSpacing: '0.06em', paddingTop: 4, display: 'block' }}>
-          {item.date}
-        </span>
-      </div>
-
-      {/* Right: content */}
-      <div className="lg:border-l lg:pl-8 group-hover:[border-left-color:rgba(222,219,200,0.2)]" style={{ borderLeftColor: 'rgba(222,219,200,0.07)', transition: 'border-color 0.3s' }}>
-        <div className="flex items-start justify-between gap-4">
-          <div>
-            {/* Date: mobile only — above role */}
-            <p className="block lg:hidden text-primary/35 text-xs font-mono mb-1" style={{ letterSpacing: '0.06em' }}>
-              {item.date}
-            </p>
-            <p style={{ color: '#E1E0CC', fontSize: 'clamp(20px, 2.5vw, 26px)', fontWeight: 500, marginBottom: 6 }}>
-              {item.role}
-            </p>
-            <p style={{ color: 'rgba(222,219,200,0.4)', fontSize: 14, marginBottom: 14 }}>
-              {item.company}
-            </p>
-          </div>
-          {item.current && (
-            <div className="hidden lg:block flex-shrink-0">
-              <span style={{ background: 'rgba(222,219,200,0.08)', borderRadius: 9999, padding: '4px 12px', fontSize: 11, color: 'rgba(222,219,200,0.6)', letterSpacing: '0.08em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>
-                Current
-              </span>
-            </div>
-          )}
-        </div>
-
-        <div className="flex flex-col gap-2 mt-1">
-          {item.bullets.map((bullet, i) => (
-            <div key={i} className="flex items-start gap-3">
-              <div style={{ width: 4, height: 4, borderRadius: 9999, background: 'rgba(222,219,200,0.25)', marginTop: 8, flexShrink: 0 }} />
-              <p style={{ color: 'rgba(222,219,200,0.45)', fontSize: 14, lineHeight: 1.7 }}>
-                {bullet}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  )
-}
+const PROCESS = [
+  { step: '01', title: 'DISCOVER', desc: 'Understanding goals, audience, and project requirements before touching any code.' },
+  { step: '02', title: 'DESIGN',   desc: 'Architecting clean systems with a focus on user experience and scalability.' },
+  { step: '03', title: 'BUILD',    desc: 'Writing quality code with focus on performance, security, and maintainability.' },
+  { step: '04', title: 'DEPLOY',   desc: 'Testing, optimizing, and launching with obsessive attention to detail.' },
+]
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="bg-transparent py-20 sm:py-28 px-4 sm:px-6">
-      <div className="max-w-5xl mx-auto">
+    <section id="experience" style={{ background: '#0d0d0d', padding: '96px 32px', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+      <div style={{ maxWidth: 1280, margin: '0 auto' }}>
 
-        {/* Header */}
-        <div className="flex items-end justify-between mb-16 sm:mb-20 flex-wrap gap-6">
-          <div>
-            <p style={{ color: 'rgba(222,219,200,0.4)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', marginBottom: 12 }}>
-              Career
-            </p>
-            <WordsPullUpMultiStyle
-              segments={[
-                { text: "Where I've", className: 'text-primary font-normal' },
-                { text: 'built things.', className: 'font-serif italic text-primary' },
-              ]}
-              containerClassName="text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[0.9]"
-            />
-          </div>
-          <p style={{ color: 'rgba(222,219,200,0.45)', fontSize: 12, lineHeight: 1.6, maxWidth: 200, textAlign: 'right' }}>
-            4 roles across AI engineering, data analysis, and product development.
+        <div style={{ marginBottom: 64 }}>
+          <p style={{ color: '#E8000B', fontSize: 11, letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: 12 }}>
+            / Work Process &amp; Experience
           </p>
+          <div className="bebas" style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', color: '#F5F5F0', lineHeight: 0.9 }}>
+            <div>WHERE I'VE</div>
+            <div>BUILT THINGS.</div>
+          </div>
         </div>
 
-        {/* Timeline */}
-        <div className="relative mt-4">
-          <div className="hidden lg:block absolute left-0 top-0 bottom-0 w-px bg-white/[0.07]" />
-          {ITEMS.map((item, i) => (
-            <TimelineItem key={i} item={item} index={i} />
-          ))}
-        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 64 }} className="lg:grid-cols-2">
 
+          {/* Timeline */}
+          <div>
+            {TIMELINE.map(item => (
+              <div
+                key={item.number}
+                style={{ display: 'flex', gap: 24, marginBottom: 40 }}
+                onMouseEnter={e => {
+                  const num = (e.currentTarget as HTMLDivElement).querySelector('.exp-num') as HTMLElement
+                  if (num) num.style.color = '#E8000B'
+                }}
+                onMouseLeave={e => {
+                  const num = (e.currentTarget as HTMLDivElement).querySelector('.exp-num') as HTMLElement
+                  if (num) num.style.color = 'rgba(255,255,255,0.1)'
+                }}
+              >
+                <span className="bebas exp-num" style={{ fontSize: 36, color: 'rgba(255,255,255,0.1)', lineHeight: 1, flexShrink: 0, transition: 'color 0.3s' }}>
+                  {item.number}
+                </span>
+                <div>
+                  <p className="bebas" style={{ fontSize: 18, color: '#F5F5F0', letterSpacing: '0.05em' }}>{item.role}</p>
+                  <p style={{ fontSize: 13, color: '#888', marginBottom: 12 }}>{item.company}</p>
+                  <ul style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+                    {item.bullets.map((b, i) => (
+                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: 8 }}>
+                        <span style={{ color: '#E8000B', flexShrink: 0, fontSize: 12 }}>▸</span>
+                        <span style={{ fontSize: 13, color: '#666', lineHeight: 1.5 }}>{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p style={{ fontSize: 10, letterSpacing: '0.15em', color: '#E8000B', marginTop: 8, textTransform: 'uppercase' }}>
+                    {item.date}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Process */}
+          <div>
+            {PROCESS.map(p => (
+              <div
+                key={p.step}
+                style={{ borderLeft: '2px solid rgba(255,255,255,0.05)', paddingLeft: 24, marginBottom: 32, transition: 'border-color 0.3s' }}
+                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = '#E8000B' }}
+                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.05)' }}
+              >
+                <p style={{ fontSize: 10, letterSpacing: '0.2em', color: '#E8000B', textTransform: 'uppercase', marginBottom: 4 }}>{p.step}</p>
+                <p className="bebas" style={{ fontSize: 20, color: '#F5F5F0', marginBottom: 8 }}>{p.title}</p>
+                <p style={{ fontSize: 13, color: '#666', lineHeight: 1.6 }}>{p.desc}</p>
+              </div>
+            ))}
+          </div>
+
+        </div>
       </div>
     </section>
   )

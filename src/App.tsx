@@ -1,31 +1,22 @@
 import './index.css'
-import NarrativeBackground from './components/NarrativeBackground'
 import HeroSection from './components/HeroSection'
+import RedMarquee from './components/RedMarquee'
 import AboutSection from './components/AboutSection'
+import ProjectsSection from './components/ProjectsSection'
 import ExperienceSection from './components/ExperienceSection'
-import FeaturesSection from './components/FeaturesSection'
 import SkillsSection from './components/SkillsSection'
-import MarqueeStrip from './components/MarqueeStrip'
-import CredentialsSection from './components/CredentialsSection'
 import ContactSection from './components/ContactSection'
 
 export default function App() {
   return (
-    <div className="relative bg-black min-h-screen">
-
-      <NarrativeBackground />
-
-      <div className="relative z-10">
-        <HeroSection />
-        <AboutSection />
-        <ExperienceSection />
-        <FeaturesSection />
-        <MarqueeStrip />
-        <SkillsSection />
-        <CredentialsSection />
-        <ContactSection />
-      </div>
-
-    </div>
+    <main style={{ background: '#0a0a0a', minHeight: '100vh' }}>
+      <HeroSection />
+      <RedMarquee />
+      <AboutSection />
+      <ProjectsSection />
+      <ExperienceSection />
+      <SkillsSection />
+      <ContactSection />
+    </main>
   )
 }
