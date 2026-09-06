@@ -1,8 +1,5 @@
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion'
 
-const VIDEO_URL =
-  'https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260405_170732_8a9ccda6-5cff-4628-b164-059c500a2b41.mp4'
-
 interface ChapterProps {
   label: string
   range: [number, number]
@@ -59,15 +56,19 @@ export default function NarrativeBackground() {
   return (
     <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
 
-      {/* Video — always playing, full screen */}
-      <video
-        src={VIDEO_URL}
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover"
-        style={{ transform: 'translateY(17%)' }}
+      {/* Background photo — full screen */}
+      <img
+        src="/images/WhatsApp Image 2026-09-06 at 8.50.59 PM.jpeg"
+        alt=""
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          zIndex: 0,
+        }}
       />
 
       {/* Progressive dark overlay */}

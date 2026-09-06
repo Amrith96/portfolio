@@ -20,7 +20,33 @@ export default function HeroSection() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <section className="h-screen relative">
+    <section className="h-screen relative overflow-hidden">
+
+      {/* Background photo */}
+      <img
+        src="/images/WhatsApp Image 2026-09-06 at 8.50.59 PM.jpeg"
+        alt="Amrith Raj"
+        className="hero-img"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center',
+          zIndex: 0,
+        }}
+      />
+
+      {/* Dark overlay */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to right, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.45) 60%, rgba(0,0,0,0.2) 100%)',
+          zIndex: 1,
+        }}
+      />
 
       {/* Navbar — floating pill (desktop only) */}
       <div className="absolute top-0 left-0 right-0 z-20 hidden md:flex justify-center pt-5">
