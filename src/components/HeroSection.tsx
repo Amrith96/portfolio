@@ -214,13 +214,14 @@ export default function HeroSection() {
         {/* RIGHT — photo */}
         <div style={{ position: 'relative', height: '60vw', minHeight: 400 }} className="lg:h-auto">
           <img
-            src="/images/WhatsApp Image 2026-09-06 at 8.54.58 PM.jpeg"
+            src="/images/hero-portrait.png"
             alt="Amrith Raj"
             className="ken-burns"
             style={{
               position: 'absolute', inset: 0,
               width: '100%', height: '100%',
               objectFit: 'cover', objectPosition: 'center top',
+              filter: 'contrast(1.05)',
             }}
           />
           {/* Dark gradient left edge to blend with left panel */}
