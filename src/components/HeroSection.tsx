@@ -47,19 +47,19 @@ export default function HeroSection() {
       {/* GIANT RED BACKGROUND TEXT */}
       <div style={{
         position: 'absolute',
-        top: '50%',
+        top: '45%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         zIndex: 0,
         pointerEvents: 'none',
         userSelect: 'none',
         fontFamily: "'Bebas Neue', sans-serif",
-        fontSize: 'clamp(120px, 28vw, 380px)',
+        fontSize: 'clamp(80px, 18vw, 240px)',
         color: '#E8000B',
         lineHeight: 0.85,
         whiteSpace: 'nowrap',
         letterSpacing: '-0.02em',
-        opacity: 0.85,
+        opacity: 0.75,
       }}>PORTFOLIO</div>
 
       {/* PHOTO — centered, slightly right */}
@@ -69,18 +69,19 @@ export default function HeroSection() {
         transition={{ duration: 1.2, delay: 0.1, ease }}
         style={{
           position: 'absolute',
-          top: 0,
-          left: '50%',
-          transform: 'translateX(-30%)',
-          width: '55%',
-          height: '100%',
+          top: '5%',
+          right: 0,
+          left: 'auto',
+          transform: 'none',
+          width: '42%',
+          height: '90%',
           zIndex: 1,
         }}
       >
         <img
           src="/images/hero-portrait.png"
           alt="Amrith Raj"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }}
         />
         {/* Left fade */}
         <div style={{ position: 'absolute', top: 0, left: 0, width: '50%', height: '100%', background: 'linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.5) 60%, transparent 100%)', zIndex: 2 }} />
