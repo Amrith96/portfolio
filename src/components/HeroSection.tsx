@@ -44,24 +44,58 @@ export default function HeroSection() {
         </motion.div>
       </nav>
 
-      {/* PHOTO */}
+      {/* GIANT RED BACKGROUND TEXT */}
+      <div style={{
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        zIndex: 0,
+        pointerEvents: 'none',
+        userSelect: 'none',
+        fontFamily: "'Bebas Neue', sans-serif",
+        fontSize: 'clamp(120px, 28vw, 380px)',
+        color: '#E8000B',
+        lineHeight: 0.85,
+        whiteSpace: 'nowrap',
+        letterSpacing: '-0.02em',
+        opacity: 0.85,
+      }}>PORTFOLIO</div>
+
+      {/* PHOTO — centered, slightly right */}
       <motion.div
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.2, delay: 0.1, ease }}
-        style={{ position: 'absolute', top: 0, right: 0, width: '52%', height: '100%', zIndex: 1 }}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: '50%',
+          transform: 'translateX(-30%)',
+          width: '55%',
+          height: '100%',
+          zIndex: 1,
+        }}
       >
         <img
           src="/images/hero-portrait.png"
           alt="Amrith Raj"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
         />
-        <div style={{ position: 'absolute', top: 0, left: 0, width: '60%', height: '100%', background: 'linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.7) 60%, transparent 100%)', zIndex: 2 }} />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '30%', background: 'linear-gradient(to top, #0a0a0a 0%, transparent 100%)', zIndex: 2 }} />
+        {/* Left fade */}
+        <div style={{ position: 'absolute', top: 0, left: 0, width: '50%', height: '100%', background: 'linear-gradient(to right, #0a0a0a 0%, rgba(10,10,10,0.5) 60%, transparent 100%)', zIndex: 2 }} />
+        {/* Bottom fade */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '35%', background: 'linear-gradient(to top, #0a0a0a 0%, transparent 100%)', zIndex: 2 }} />
+        {/* Right fade */}
+        <div style={{ position: 'absolute', top: 0, right: 0, width: '30%', height: '100%', background: 'linear-gradient(to left, #0a0a0a 0%, transparent 100%)', zIndex: 2 }} />
       </motion.div>
 
-      {/* BIG BACKGROUND TEXT */}
-      <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 0, pointerEvents: 'none', userSelect: 'none', fontFamily: "'Bebas Neue', sans-serif", fontSize: 'clamp(80px, 20vw, 280px)', color: 'rgba(255,255,255,0.02)', lineHeight: 1, whiteSpace: 'nowrap' }}>PORTFOLIO</div>
+      {/* SMALL TEXT top right */}
+      <div style={{ position: 'absolute', top: 32, right: 32, zIndex: 20, textAlign: 'right', maxWidth: 140 }}>
+        <p style={{ fontSize: 9, letterSpacing: '0.12em', color: '#555', textTransform: 'uppercase', lineHeight: 1.6 }}>
+          Turning ideas into powerful digital experiences.
+        </p>
+      </div>
 
       {/* LEFT CONTENT */}
       <div style={{ position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '100vh', padding: '140px 32px 40px', maxWidth: '55%' }}>
