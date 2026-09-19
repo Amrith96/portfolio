@@ -11,40 +11,47 @@ export default function HeroSection() {
         <img
           src="/images/hero-portrait.png"
           alt="Amrith Raj"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }}
+          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: '60% top', display: 'block' }}
         />
         {/* Left 60% fade */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
-          background: 'linear-gradient(to right, #0a0a0a 35%, rgba(10,10,10,0.6) 65%, transparent 100%)',
+          background: 'linear-gradient(to right, #0a0a0a 20%, rgba(10,10,10,0.4) 50%, transparent 100%)',
         }} />
         {/* Bottom fade */}
         <div style={{
-          position: 'absolute', bottom: 0, left: 0, right: 0, height: '50%', pointerEvents: 'none',
-          background: 'linear-gradient(to top, #0a0a0a 0%, transparent 40%)',
+          position: 'absolute', bottom: 0, left: 0, right: 0, height: '35%', pointerEvents: 'none',
+          background: 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, transparent 100%)',
         }} />
         {/* Right edge fade */}
         <div style={{
           position: 'absolute', top: 0, right: 0, width: '20%', height: '100%', pointerEvents: 'none',
           background: 'linear-gradient(to left, #0a0a0a 0%, transparent 30%)',
         }} />
+        {/* Subtle light overlay */}
+        <div style={{
+          position: 'absolute', inset: 0, zIndex: 3, pointerEvents: 'none',
+          background: 'radial-gradient(ellipse 60% 70% at 65% 40%, rgba(255,255,255,0.04) 0%, transparent 70%)',
+        }} />
       </div>
 
       {/* LAYER 1 — PORTFOLIO background text */}
       <div style={{
-        position: 'absolute', top: 0, left: 0, right: 0, zIndex: 1,
+        position: 'absolute', inset: 0, zIndex: 2,
         pointerEvents: 'none', userSelect: 'none', overflow: 'hidden',
       }}>
         <span style={{
           fontFamily: "'Bebas Neue', sans-serif",
-          fontSize: 'clamp(100px, 22vw, 320px)',
+          fontSize: 'clamp(140px, 26vw, 360px)',
           color: '#E8000B',
-          opacity: 0.9,
+          opacity: 0.7,
           lineHeight: 0.85,
           letterSpacing: '-0.02em',
+          whiteSpace: 'nowrap',
           position: 'absolute',
-          top: -10,
-          left: -10,
+          top: '50%',
+          left: '-20px',
+          transform: 'translateY(-60%)',
           display: 'block',
         }}>PORTFOLIO</span>
       </div>
